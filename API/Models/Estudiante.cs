@@ -8,5 +8,6 @@
         public Boolean TieneBeca {  get; set; }
 
 
+
     }
 }

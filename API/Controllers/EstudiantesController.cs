@@ -1,4 +1,5 @@
 ﻿using API.Models;
+using API.Respository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,11 @@ namespace API.Controllers
     public class EstudiantesController : ControllerBase
     {
         [HttpGet]
-        public List<Estudiante> DevuelveListadoEstudiante() { 
+        [Route("listado")]
+        public List<Estudiante> DevuelveListadoEstudiantes() {
+            EstudiantesRespository repo = new EstudiantesRespository();
+            var listado = repo.DevuelveListdoEstudiantes();
+            return listado;
             }
     }
 }
